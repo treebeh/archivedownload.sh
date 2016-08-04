@@ -20,13 +20,13 @@ if [ "`cat processedidentifiers.txt | wc -l`" = "0" ]; then
 fi
 echo Beginning wget download of `cat processedidentifiers.txt | wc -l` identifiers...
 wget -r -H -Darchive.org --exclude-domains blog.archive.org,store.archive.org -nc -np -nH -nd -e robots=off -i processedidentifiers.txt -B 'http://archive.org/download/' -A .$filetype
-if ls -U *_text.pdf > /dev/null 2>&1; then
+if ls -U *_text.cbr > /dev/null 2>&1; then
   echo Found text-format PDFs, moving into text/ directory...
   if [ -d text ]; then
-    mv *_text.pdf text/
+    mv *_text.cbr text/
   else
     mkdir text
-    mv *_text.pdf text/
+    mv *_text.cbr text/
   fi
   echo Move complete.
 fi
