@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Pick your filetype here. Examples: mp4, mp3, epub, pdf, txt
-filetype=pdf
+filetype=cbr
 
 if [ "$1" = "" ]; then
   echo USAGE: archivedownload.sh collectionname
